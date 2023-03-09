@@ -2,6 +2,7 @@ import { View, Text, TouchableOpacity, Image, Button } from 'react-native'
 import React, {useEffect, useState} from 'react'
 import {GoogleSignin, GoogleSigninButton} from '@react-native-google-signin/google-signin';
 import auth from '@react-native-firebase/auth'
+import FbLogin from './FbLogin';
 
 GoogleSignin.configure({
   webClientId: '254115731633-idptf1cjo263v1f0ei6h0s27qq5kgcjs.apps.googleusercontent.com',
@@ -54,7 +55,7 @@ const GoogleLogin = () => {
   
 if (!user) {
     return (
-      <View className='flex-1 justify-center items-center'>
+      <View className='flex justify-center items-center'>
         <Text className='font-bold text-3xl text-center m-5'>Login to continue...</Text>
 
         <GoogleSigninButton style={{ width: 194, height: 60 }}
@@ -63,10 +64,7 @@ if (!user) {
           onPress={onGoogleButtonPress}
         />
 
-        <TouchableOpacity className='flex flex-row justify-center items-center mt-4 bg-blue-500 px-2 py-3'>
-        <Image className='' source={{uri : 'https://img.icons8.com/fluency/48/null/facebook-new.png'}} height={30} width={30} />
-        <Text className='text-white mx-1 font-semibold'>Sign in with facebook</Text>
-        </TouchableOpacity>
+        <FbLogin />
       </View>
     );
   }

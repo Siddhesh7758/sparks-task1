@@ -6,7 +6,7 @@ import GoogleLogin from './screens/GoogleLogin';
 export default function App() {
   return (
     <View className='flex-1 justify-center items-center'>
-      <GoogleLogin/>
+      <GoogleLogin />
     </View>
   );
 }
